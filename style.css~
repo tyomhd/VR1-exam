@@ -5,3 +5,7 @@ border-color: blue;
 body{
 	text-align: center;
 }
+table {
+	display: block;
+	left: 50%: 
+}
