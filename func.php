@@ -9,4 +9,9 @@ function connect_db(){
 	mysqli_query($connection, "SET CHARACTER SET UTF8") or die("Ei saanud baasi utf-8-sse - ".mysqli_error($connection));
 }
 
+function likeit(){
+	
+header("Location: exam.php");
+}
+
 ?>
