@@ -2,5 +2,5 @@
 session_start();
 session_unset();
 session_destroy();
-header ("Location: controller.php?page=main");
+header("Refresh:0; url=exam.php");
 ?>

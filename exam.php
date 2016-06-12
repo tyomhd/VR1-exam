@@ -27,21 +27,9 @@ switch($page) {
 include_once('head.html');
 
 
-echo '<form method="post" action="like.php">
-<p>Loo leheküljele "like" nupp. Kuva välja "like"-ide arvu. Andmed salvesta andmebaasi.<br/>
+echo '<p>Loo leheküljele "like" nupp. Kuva välja "like"-ide arvu. Andmed salvesta andmebaasi.<br/>
 Lahendust mõeldes eelda, et kasutaja brauseris on lubatud nii Javascript kui ka küpsised.</p>
-<p>Likes count: </p>
-<input type="submit" value="Like it"/>
-</form>';
-echo '<form method="post" action="destroysession.php">
-<p>Want to destroy session? </p>
-<input type="submit" value="Destroy session"/>
-</form>';
-
-include_once('foot.html');
-
-
-
+';
 
 
 $selecttable = "SELECT * FROM alikhach_exam";
@@ -62,9 +50,16 @@ if ($result->num_rows > 0) {
     echo "Table is empty";
 }
 
-echo '<form method="post" action="func.php">
-<button type="submit" formaction="refresh.php">Suurendada kõiki tabelis olevaid vanuseid 1 aasta võrra</button>
+echo '<form method="post" action="like.php">
+<button type="submit" formaction="like.php">like it</button>
 </form>';
+
+echo '<form method="post" action="destroysession.php">
+<p>Want to destroy session? </p>
+<input type="submit" value="Destroy session"/>
+</form>';
+
+include_once('foot.html');
 
 
 
