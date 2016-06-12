@@ -9,9 +9,13 @@ function connect_db(){
 	mysqli_query($connection, "SET CHARACTER SET UTF8") or die("Ei saanud baasi utf-8-sse - ".mysqli_error($connection));
 }
 
-function likeit(){
-	
-header("Location: exam.php");
-}
+
+global $connection;
+mysqli_query($connection, "UPDATE alikhach_exam SET likescount=likescount+1");
+mysqli_close($connection);
+header("Refresh:0; url=exam.php");
+
+
+
 
 ?>

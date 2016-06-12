@@ -38,9 +38,38 @@ echo '<form method="post" action="destroysession.php">
 <input type="submit" value="Destroy session"/>
 </form>';
 
-
-
 include_once('foot.html');
+
+
+
+
+
+$selecttable = "SELECT * FROM alikhach_exam";
+$result = mysqli_query($connection, $selecttable);
+if ($result->num_rows > 0) {
+    echo "<table border='1'><tr>";
+    echo "<th>id</th>";
+    echo "<th>likes</th></tr>";
+ 
+    while($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>".$row['postid']."</td>";
+        echo "<td>".$row['likescount']."</td>";
+        echo "</tr>";
+     }
+    echo "</table>";
+} else {
+    echo "Table is empty";
+}
+
+echo '<form method="post" action="func.php">
+<button type="submit" formaction="refresh.php">Suurendada kõiki tabelis olevaid vanuseid 1 aasta võrra</button>
+</form>';
+
+
+
+
+
 
 
 
